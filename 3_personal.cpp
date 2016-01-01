@@ -70,14 +70,24 @@ void third_personal(T *a,int n) {
 }
 
 template <typename T>
-void fourth_personal(T *a,int n) {
-	T cup;
-	for (int i = 0; i < n; i++) {
-		if (a[i] < a[0]) {
-			// Можно ли прикрутить сортировку?
+void fourth_personal(int a, int b, T *arr){ 
+	T center = arr[(a + b) / 2]; 
+	int na = a; int nb = b; 
+	while (na <= nb) { 
+		while (arr[na] < center) na++; 
+		while (arr[nb] > center) nb--; 
+		if (na <= nb) { 
+			T cup; 
+			cup=arr[na]; 
+			arr[na]=arr[nb]; 
+			arr[nb]=cup; 
+			na++; 
+			nb--; 
 		} 
-	}
-}
+	} 
+	if (na<b) fourth_personal(na, b, arr); 
+	if (a<nb) fourth_personal(a, nb, arr); 
+} 
 
 int main(){
 	int n;
@@ -103,7 +113,8 @@ int main(){
 
 	// Вариант 20: Преобразовать массив таким образом, чтобы сначала располагались элементы,
 	// отличающиеся от минимального не более чем на 15%, а потом все остальные
-	fourth_personal(a,n);
+	fourth_personal(0, n-1,b);
+	print_r(b,n);
 
 	delete []a;
 	_getch();

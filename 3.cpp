@@ -58,22 +58,22 @@ int binary_search(T *a, T ch, int n){
 
 
 void quicksort(int a, int b, int *arr){ 
-int center = arr[(a + b) / 2]; 
-int na = a; int nb = b; 
-while (na <= nb) { 
-	while (arr[na] < center) na++; 
-	while (arr[nb] > center) nb--; 
-	if (na <= nb) { 
-		int cup; 
-		cup=arr[na]; 
-		arr[na]=arr[nb]; 
-		arr[nb]=cup; 
-		na++; 
-		nb--; 
+	int center = arr[(a + b) / 2]; 
+	int na = a; int nb = b; 
+	while (na <= nb) { 
+		while (arr[na] < center) na++; 
+		while (arr[nb] > center) nb--; 
+		if (na <= nb) { 
+			int cup; 
+			cup=arr[na]; 
+			arr[na]=arr[nb]; 
+			arr[nb]=cup; 
+			na++; 
+			nb--; 
+		} 
 	} 
-} 
-if (na<b) quicksort(na, b, arr); 
-if (a<nb) quicksort(a, nb, arr); 
+	if (na<b) quicksort(na, b, arr); 
+	if (a<nb) quicksort(a, nb, arr); 
 } 
 
 
