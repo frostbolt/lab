@@ -50,20 +50,20 @@ bool second(char string[256]) {
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	std::cout.setf(std::ios::boolalpha); // Вывод true/false 
+	std::cout.setf(std::ios::boolalpha); // Р’С‹РІРѕРґ true/false 
 
 	//
 	char fio[256];
-	cout << "ФИО: ";
+	cout << "Р¤РРћ: ";
 	cin.getline(fio, 256);
 	first(fio);
 
 
 	//
 	char s[256];
-	cout << endl << "Строка: ";
+	cout << endl << "РЎС‚СЂРѕРєР°: ";
 	cin.getline(s, 256);
-	cout << " Палиндром? - " << second(s) << endl;
+	cout << " РџР°Р»РёРЅРґСЂРѕРј? - " << second(s) << endl;
 
 
 
