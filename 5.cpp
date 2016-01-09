@@ -5,6 +5,8 @@
 #include <cstdlib>
 #include <windows.h>
 #include <cstdio>
+#include <fstream>
+#include <cstring>
 
 using namespace std;
 
@@ -47,23 +49,40 @@ bool second(char string[256]) {
 	return true;
 }
 
+void third(char path[256]char path[80]) {
+	ifstream file(path);
+	char buffer[80];
+	while (file.getline(buffer, 80)) {
+		strstr(buffer, lf)
+	}
+
+}
+
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	std::cout.setf(std::ios::boolalpha); // –í—ã–≤–æ–¥ true/false 
+	std::cout.setf(std::ios::boolalpha); // ¬˚‚Ó‰ true/false 
 
 	//
 	char fio[256];
-	cout << "–§–ò–û: ";
+	cout << "‘»Œ: ";
 	cin.getline(fio, 256);
 	first(fio);
 
 
 	//
 	char s[256];
-	cout << endl << "–°—Ç—Ä–æ–∫–∞: ";
+	cout << endl << "—ÚÓÍ‡: ";
 	cin.getline(s, 256);
-	cout << " –ü–∞–ª–∏–Ω–¥—Ä–æ–º? - " << second(s) << endl;
+	cout << " œ‡ÎËÌ‰ÓÏ? - " << second(s) << endl;
+
+
+	//
+	char path[256] = "text.txt";
+	char word[80];
+	cin >> word;
+	third(path, word);
+
 
 
 
