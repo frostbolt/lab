@@ -49,11 +49,15 @@ bool second(char string[256]) {
 	return true;
 }
 
-void third(char path[256]char path[80]) {
+void third(char path[256], char word[80]) {
 	ifstream file(path);
+	int counter =0;
 	char buffer[80];
 	while (file.getline(buffer, 80)) {
-		strstr(buffer, lf)
+		while(strstr(buffer, word)) {
+			counter++;
+			
+		}	
 	}
 
 }
@@ -61,20 +65,20 @@ void third(char path[256]char path[80]) {
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	std::cout.setf(std::ios::boolalpha); // ¬˚‚Ó‰ true/false 
+	std::cout.setf(std::ios::boolalpha); // –í—ã–≤–æ–¥ true/false 
 
 	//
 	char fio[256];
-	cout << "‘»Œ: ";
+	cout << "–§–ò–û: ";
 	cin.getline(fio, 256);
 	first(fio);
 
 
 	//
 	char s[256];
-	cout << endl << "—ÚÓÍ‡: ";
+	cout << endl << "–°—Ç—Ä–æ–∫–∞: ";
 	cin.getline(s, 256);
-	cout << " œ‡ÎËÌ‰ÓÏ? - " << second(s) << endl;
+	cout << " –ü–∞–ª–∏–Ω–¥—Ä–æ–º? - " << second(s) << endl;
 
 
 	//
