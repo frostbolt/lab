@@ -13,21 +13,27 @@ using namespace std;
 void first(char a[256]) {
 	int i = 0;
 	bool flag = true;
-
+	char answer[256];
+	int j = 0;
 	while (a[i]!='\0') {
 		if (flag) {
-			cout << a[i];
+			answer[j] = a[i];			
+			j++;
 			if (a[i] == ' ') {
+				answer[j+1] = a[i+1];			
+				j++;
 				flag = false;
-				cout << a[i+1] << " ";
 			}
 		} else {
 			if (a[i] == ' ') {
-				cout << a[i+1];
+				answer[j] = a[i];
+				answer[j+1] = a[i+1];
+				answer[j+2] = '\0';
 			}
 		}
 		i++;
 	}
+	cout << answer;
 }
 
 bool second(char string[256]) {
@@ -65,20 +71,20 @@ void third(char path[256], char word[80]) {
 int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	std::cout.setf(std::ios::boolalpha); // Ð’Ñ‹Ð²Ð¾Ð´ true/false 
+	std::cout.setf(std::ios::boolalpha); 
 
 	//
 	char fio[256];
-	cout << "Ð¤Ð˜Ðž: ";
+	cout << "ÔÈÎ: ";
 	cin.getline(fio, 256);
 	first(fio);
 
 
 	//
 	char s[256];
-	cout << endl << "Ð¡Ñ‚Ñ€Ð¾ÐºÐ°: ";
+	cout << endl << "Ñòðîêà: ";
 	cin.getline(s, 256);
-	cout << " ÐŸÐ°Ð»Ð¸Ð½Ð´Ñ€Ð¾Ð¼? - " << second(s) << endl;
+	cout << " Ïàëèíäðîì? - " << second(s) << endl;
 
 
 	//

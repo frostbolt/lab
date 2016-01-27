@@ -50,10 +50,6 @@ int main() {
 	// 3 индивид.
 
 	float x = -0.9, x2 = 0.9, dx = 0.1, eps = 0.0001;
-	//cin >> x;
-	//cin >> x2;
-	//cin >> dx;
-	//cin >> eps;
 	third(x, x2, dx, eps);
 
 	// 4 индивид.
