@@ -47,7 +47,8 @@ class ModelWindow {
 	unsigned long long color;
 	bool visability, bordered;
 
-public:
+	public:
+
 	bool operator == (ModelWindow &original) {
 		if (this->header == original.header && this->pos == original.pos && this->size == original.size &&
 			this->color == original.color && this->visability == original.visability && this->bordered == original.bordered) {
@@ -152,8 +153,7 @@ istream& operator >> (istream &in, ModelWindow &t){
 }
 
 
-int main()
-{
+int main() {
 	ModelWindow a, b(0, 0, 100, 50, "hedr", 0x000000, true, true);
 	cout << a;
 	cout << b;
