@@ -14,26 +14,29 @@ void repl(string &str, string &word1, string &word2) {
 	}
 }
 
-void reading(ifstream &file){
+void reading(fstream &file){
 	while (!file.eof()){
 		string str;
 		string word1;
-		word1="if";
+		word1="if ";
 		string word2;
 		word2="if(";
 		getline(file, str);
 		cout << str << "\t<-- source" << endl;
 		repl(str,word1,word2);
+		word1=" then";
+		word2=")    ";
+		repl(str,word1,word2);	
 		cout <<str<<"\t<-- edited" << endl;
 	}
 }
 
 int main() {
 
-	ifstream file("pas.pas");
+	fstream file("pas.pas");
+	reading(file);
 	file.close();
 
-	reading(file);
 
 	_getch();
 	return 0;
